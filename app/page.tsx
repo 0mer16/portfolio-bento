@@ -1,65 +1,94 @@
-import Image from "next/image";
+import BentoGrid from '@/components/BentoGrid'
+import BentoCard from '@/components/BentoCard'
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <BentoGrid>
+      {/* Hero Card - 2x2 */}
+      <BentoCard span="2x2" className="flex flex-col justify-center">
+        <h1 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-bold mb-4">
+          Full-Stack
+          <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-main)] to-[var(--accent-playful)]">
+            Developer
+          </span>
+        </h1>
+        <p className="text-lg text-gray-400">
+          Crafting high-performance web experiences
+        </p>
+      </BentoCard>
+
+      {/* Stack Card - 1x1 */}
+      <BentoCard span="1x1" className="flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-4xl mb-2">⚡</div>
+          <p className="text-sm text-gray-400">Tech Stack</p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </BentoCard>
+
+      {/* Availability Card - 1x1 */}
+      <BentoCard span="1x1" className="flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-3 h-3 bg-green-500 rounded-full mx-auto mb-2 animate-pulse"></div>
+          <p className="text-sm font-medium">Available for Work</p>
         </div>
-      </main>
-    </div>
+      </BentoCard>
+
+      {/* Trust/Stats Card - 2x1 */}
+      <BentoCard span="2x1" className="flex items-center justify-between">
+        <div>
+          <div className="text-3xl font-bold text-[var(--accent-main)]">100%</div>
+          <p className="text-sm text-gray-400">Job Success</p>
+        </div>
+        <div>
+          <div className="text-3xl font-bold text-[var(--accent-playful)]">50+</div>
+          <p className="text-sm text-gray-400">Projects</p>
+        </div>
+        <div>
+          <div className="text-2xl">🏆</div>
+          <p className="text-sm text-gray-400">Top Rated</p>
+        </div>
+      </BentoCard>
+
+      {/* Project Card 1 - 1x2 */}
+      <BentoCard span="1x2" className="bg-gradient-to-br from-blue-500/10 to-purple-500/10">
+        <div className="h-full flex flex-col justify-between">
+          <div>
+            <span className="text-xs px-2 py-1 bg-[var(--accent-main)] rounded-full">SHOPIFY</span>
+            <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold mt-4">
+              E-commerce Store
+            </h3>
+          </div>
+          <div className="text-sm text-gray-400">
+            View Case Study →
+          </div>
+        </div>
+      </BentoCard>
+
+      {/* Project Card 2 - 1x2 */}
+      <BentoCard span="1x2" className="bg-gradient-to-br from-purple-500/10 to-pink-500/10">
+        <div className="h-full flex flex-col justify-between">
+          <div>
+            <span className="text-xs px-2 py-1 bg-[var(--accent-playful)] rounded-full">ENGINEERING</span>
+            <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold mt-4">
+              SaaS Dashboard
+            </h3>
+          </div>
+          <div className="text-sm text-gray-400">
+            View Case Study →
+          </div>
+        </div>
+      </BentoCard>
+
+      {/* Contact Card - 2x1 */}
+      <BentoCard span="2x1" className="flex items-center justify-center cursor-pointer hover:bg-[var(--accent-main)]/10 transition-colors">
+        <div className="text-center">
+          <div className="text-2xl mb-2">📧</div>
+          <p className="font-medium">Get in Touch</p>
+          <p className="text-sm text-gray-400">Click to copy email</p>
+        </div>
+      </BentoCard>
+    </BentoGrid>
   );
 }
+
