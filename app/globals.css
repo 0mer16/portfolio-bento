@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   --bg-primary: #0f172a;
@@ -30,11 +29,14 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-body);
   position: relative;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* Grainy Noise Texture Overlay */
